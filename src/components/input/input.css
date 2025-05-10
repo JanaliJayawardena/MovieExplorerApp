@@ -1,0 +1,16 @@
+:root {
+  --black: #000000;              /* Replace with actual $black value */
+  --border-radius: 8px;          /* Replace with actual $border-radius value */
+  --txt-color: #ffffff;          /* Replace with actual $txt-color value */
+  --font-family: 'Poppins', sans-serif;  /* Replace with actual $font-family */
+}
+
+input {
+  border: 0;
+  background-color: var(--black);
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  color: var(--txt-color);
+  font-family: var(--font-family);
+}

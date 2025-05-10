@@ -1,0 +1,12 @@
+@import "swiper/swiper.min.css";
+@import "./global.css"; /* Make sure this is imported */
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+}

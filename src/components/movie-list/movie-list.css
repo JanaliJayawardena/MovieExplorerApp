@@ -1,0 +1,17 @@
+.movie-list .swiper-slide {
+  width: 15%;
+}
+
+/* Tablet: typically max-width 1024px */
+@media screen and (max-width: 1024px) {
+  .movie-list .swiper-slide {
+    width: 30%;
+  }
+}
+
+/* Mobile: typically max-width 768px */
+@media screen and (max-width: 768px) {
+  .movie-list .swiper-slide {
+    width: 40%;
+  }
+}

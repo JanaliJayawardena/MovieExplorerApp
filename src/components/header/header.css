@@ -1,0 +1,141 @@
+/* Replace these values with your actual SCSS variables */
+:root {
+  --header-height: 100px;
+  --header-shrink-height: 80px;
+  --body-bg: #121212;
+  --main-color: #ff0000;
+  --box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header__wrap {
+  padding: 0 2rem;
+  height: 100%; /* Keep */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--main-color); /* or any color you prefer */
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo img {
+    width: 30px;
+    margin-right: 0;
+  }
+}
+
+.header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.header.shrink {
+  height: var(--header-shrink-height);
+  background-color: var(--body-bg);
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .header__wrap {
+    justify-content: center;
+  }
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+}
+
+.header__nav > * + * {
+  margin-left: 2rem;
+}
+
+.header__nav li {
+  padding: 5px 0;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.header__nav li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  transition: width 0.5s ease;
+  height: 2px;
+  background-color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: var(--body-bg);
+    padding: 0 2rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__nav > * + * {
+    margin-left: 0;
+  }
+}
+
+.login-button {
+  margin-left: 100px;
+}
+
+.login-button a {
+  background-color: #fff;
+  color: var(--main-color);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-button a:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.theme-toggle-btn {
+  padding: 0.4rem 1rem;
+  margin-left: 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--txt-color);
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #ff1a1a;
+}

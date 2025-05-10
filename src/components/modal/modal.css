@@ -1,0 +1,53 @@
+:root {
+  --black: #000000;          /* Replace with actual $black */
+  --body-bg: #121212;        /* Replace with actual $body-bg */
+  --main-color: #ff0000;     /* Replace with actual $main-color */
+}
+
+/* Base modal styling */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Converted from rgba($black, 0.4) */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Active state of modal */
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal content box */
+.modal__content {
+  padding: 2rem;
+  background-color: var(--body-bg);
+  width: 50%;
+  opacity: 0;
+  transform: translateY(-250px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  position: relative;
+}
+
+/* Tablet responsiveness */
+@media screen and (max-width: 1024px) {
+  .modal__content {
+    width: 80%;
+  }
+}
+
+
+/* Animate content when modal is active */
+.modal.active .modal__content {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,63 @@
+:root {
+  --border-radius: 12px;   /* Replace with actual SCSS value */
+  --black: #000000;        /* Replace with actual SCSS value */
+}
+
+.movie-card {
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160%;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.movie-card .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--black);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--border-radius);
+}
+.remove-fav-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-fav-btn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* Hover effects only on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+  .movie-card:hover::before {
+    opacity: 0.8;
+  }
+
+  .movie-card:hover .btn {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
