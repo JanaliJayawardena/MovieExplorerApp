@@ -14,7 +14,7 @@ function App() {
   return (
     <FavoritesProvider>
       <ThemeProvider> {/* ✅ Wrap everything in ThemeProvider */}
-        <BrowserRouter>
+        <BrowserRouter basename="/">
           <div className="app-wrapper">
             <Header />
             <div className="app-content">
